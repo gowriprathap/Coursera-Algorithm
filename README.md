@@ -16,3 +16,7 @@ It is possible for a graph to exist and a in-cut such that the probability of fi
 Let the size of the array be N and the pivot be the xth number in the sorted array.
 When (1−α)N < x < αN, the median will be in the array smaller than of equals to αN.
 The probability of the pivot lying in that range is p = 1 − (1 − α) − (1 − α), which is the whole range minus the forbidden ones. That is, p = 2α − 1.
+
+### 4. Let 0 < α < 1 be a constant, independent of n. Consider an execution of RSelect in which you always manage to throw out at least a 1 − α fraction of the remaining elements before you recurse. What is the maximum number of recursive calls you'll make before terminating?
+
+In the initial call we have n elements. We throw out 1 − α fraction of elements, so in the first recursive call we have n - n(1 − α), which is nα. So, in the first recursive call, there are at most αn elements. This goes on till the dth recursive call, where we have at most (α^d)* n elements. Let the recursion stop at the dth recursive call, then (α^d)* n ≤ 1. If we log on both sides, we get d = −log(n) log(α).
